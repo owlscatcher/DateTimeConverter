@@ -151,7 +151,8 @@
                                         <Grid Grid.Column="0">
                                             <StackPanel Orientation="Horizontal" Margin="0">
                                                 <TextBox InputScope="DateDay"
-                                                         PreviewTextInput="NumberValidationTextBox"
+                                                         x:Name="dayInput"
+                                                         PreviewTextInput="ValidationTextBox"
                                                          MaxLength="2"
                                                          materialDesign:HintAssist.Hint="DD"
                                                          Height="30" Width="45" 
@@ -159,14 +160,16 @@
                                                          FontSize="20"
                                                          Text="{Binding Date.Day, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                                 <TextBox InputScope="DateMonth" 
-                                                         PreviewTextInput="NumberValidationTextBox"
+                                                         x:Name="mounthInput"
+                                                         PreviewTextInput="ValidationTextBox"
                                                          MaxLength="2"
                                                          materialDesign:HintAssist.Hint="MM"
                                                          Height="30" Width="45" 
                                                          Margin="5" Padding="5" 
                                                          FontSize="20" 
                                                          Text="{Binding Date.Month, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                                                <TextBox InputScope="DateYear"
+                                                <TextBox InputScope="Number"
+                                                         x:Name="yearInput"
                                                          PreviewTextInput="NumberValidationTextBox"
                                                          MaxLength="4"
                                                          materialDesign:HintAssist.Hint="YYYY"
@@ -179,7 +182,8 @@
                                                            Margin="5" Padding="5" 
                                                            FontSize="20" />
                                                 <TextBox InputScope="Number" 
-                                                         PreviewTextInput="HexPackageValidationTextBox"
+                                                         x:Name="hourInput"
+                                                         PreviewTextInput="ValidationTextBox"
                                                          MaxLength="2"
                                                          materialDesign:HintAssist.Hint="HH"
                                                          Height="30" Width="45" 
@@ -187,7 +191,8 @@
                                                          FontSize="20" 
                                                          Text="{Binding Date.Hour, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
                                                 <TextBox InputScope="Time" 
-                                                         PreviewTextInput="NumberValidationTextBox"
+                                                         x:Name="minutesInput"
+                                                         PreviewTextInput="ValidationTextBox"
                                                          MaxLength="2"
                                                          materialDesign:HintAssist.Hint="mm"
                                                          Height="30" Width="45" 
@@ -200,21 +205,23 @@
                                         <Grid Grid.Column="1">
                                             <StackPanel Orientation="Vertical" Margin="0">
                                                 <TextBox InputScope="Time"
-                                                             PreviewTextInput="NumberValidationTextBox"
-                                                             MaxLength="2"
-                                                             materialDesign:HintAssist.Hint="DD"
-                                                             Height="auto" Width="45" 
-                                                             Margin="5" Padding="5" 
-                                                             FontSize="10"
-                                                             Text="{Binding Date.Seconds, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                         x:Name="secondsInput"
+                                                         PreviewTextInput="ValidationTextBox"
+                                                         MaxLength="2"
+                                                         materialDesign:HintAssist.Hint="DD"
+                                                         Height="auto" Width="45" 
+                                                         Margin="5" Padding="5" 
+                                                         FontSize="10"
+                                                        Text="{Binding Date.Seconds, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                                 <TextBox InputScope="Time" 
-                                                             PreviewTextInput="NumberValidationTextBox"
-                                                             MaxLength="4"
-                                                             materialDesign:HintAssist.Hint="MM"
-                                                             Height="auto" Width="45" 
-                                                             Margin="5" Padding="5" 
-                                                             FontSize="10" 
-                                                             Text="{Binding Date.Milliseconds, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                         x:Name="millisecondsInput"
+                                                         PreviewTextInput="ValidationTextBox"
+                                                         MaxLength="4"
+                                                         materialDesign:HintAssist.Hint="MM"
+                                                         Height="auto" Width="45" 
+                                                         Margin="5" Padding="5" 
+                                                         FontSize="10" 
+                                                         Text="{Binding Date.Milliseconds, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                             </StackPanel>
                                         </Grid>
                                     </Grid>
@@ -304,13 +311,13 @@
 
                                     <Grid Grid.Row="1">
                                         <TextBox x:Name="bytePackageInput" 
-                                                     InputScope="Number" 
-                                                     PreviewTextInput="HexPackageValidationTextBox"
-                                                     MaxLength="12"
-                                                     materialDesign:HintAssist.Hint="010300000000"
-                                                     Height="30" Width="auto" 
-                                                     Margin="5" Padding="5" 
-                                                     FontSize="20" />
+                                                 InputScope="Number" 
+                                                 PreviewTextInput="HexValidationTextBox"
+                                                 MaxLength="12"
+                                                 materialDesign:HintAssist.Hint="010300000000"
+                                                 Height="30" Width="auto" 
+                                                 Margin="5" Padding="5" 
+                                                 FontSize="20" />
                                     </Grid>
                                 </Grid>
 
@@ -397,7 +404,7 @@
                                     <Grid Grid.Row="1">
                                         <TextBox x:Name="dataByteInput"
                                                  InputScope="Number" 
-                                                 PreviewTextInput="HexPackageValidationTextBox"
+                                                 PreviewTextInput="HexValidationTextBox"
                                                  MaxLength="8"
                                                  materialDesign:HintAssist.Hint="03F1E001"
                                                  Height="30" Width="auto" 
