@@ -294,7 +294,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="5*"/>
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="5*" />
+                                    <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
 
                                 <Grid Grid.Column="0" >
@@ -386,7 +386,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="5*"/>
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="5*" />
+                                    <ColumnDefinition Width="3*" />
                                 </Grid.ColumnDefinitions>
 
                                 <Grid Grid.Column="0" >
